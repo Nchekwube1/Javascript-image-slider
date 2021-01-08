@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  // background-color: black;
+}
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+  & .wide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    background-color: transparent;
+
+    & .main {
+      position: relative;
+      width: 60%;
+      height: 90%;
+      // border: 2px solid #c03800;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & .img {
+        margin-top: 1%;
+        position: absolute;
+        width: 42%;
+        height: 90%;
+        background-color: white;
+        border: 1px solid #e0c040;
+        display: flex;
+        z-index: 1000;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s linear;
+        &.active {
+          position: absolute;
+          width: 40%;
+          height: 90%;
+          background-color: white;
+          border: 1px solid #e0c040;
+          display: flex;
+          z-index: 1000;
+          top: 0;
+        }
+        & img {
+          position: absolute;
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        &.prev {
+          transform: translateX(-70%) scale(0.5);
+          opacity: 0.6;
+          z-index: 20;
+          // border: none;
+        }
+        &.next {
+          transform: translateX(70%) scale(0.5);
+          opacity: 0.6;
+          z-index: 20;
+          //  border: none;
+        }
+        &.prev1 {
+          transform: translateX(-100%) scale(0.3);
+          opacity: 0.3;
+          z-index: 0;
+        }
+        &.next1 {
+          transform: translateX(100%) scale(0.3);
+          opacity: 0.3;
+          z-index: 0;
+        }
+      }
+      & .controls {
+        width: 100%;
+        height: 8%;
+        // background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .left {
+          position: relative;
+          width: 5%;
+          height: 90%;
+          cursor: pointer;
+          & img {
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+        & .right {
+          position: relative;
+          width: 5%;
+          height: 90%;
+          cursor: pointer;
+          & img {
+            max-width: 100%;
+            max-height: 100%;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
